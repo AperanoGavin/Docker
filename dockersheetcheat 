@@ -1,0 +1,39 @@
+Docker sheet cheat 
+
+
+docker ps    (List all the Running Containers)
+docker ps -all   ( List all the Containers (irrespective of the state) )
+docker ps -q   (List the IDs of the Running Containers)
+docker ps -a -q (List the IDs of all the Containers (irrespective of the state) )
+docker run --rm nginx (Delete the container on the exited state)
+docker run -d <image_name> (Run the container in daemon mode)
+docker container run --name nginx-container -d -p 8080:80 nginx
+
+ (To expose nginx container (port 80) on port 8080 of the host machine, we can use the below command)
+
+
+docker rename <old_name> <new_name> (Rename a Docker Container)
+docker container run -it nginx /bin/bash (Run the Docker Container in an Interactive Mode)
+docker exec -it nginx-container  /bin/bash  (Get Inside the Running Container (Literally!))
+
+docker rm -f (If you want to directly remove the container without stopping it, you can use the below command:)
+
+docker rm -f $(docker ps -a -q).  (Delete all the Docker Containers )
+
+docker container commit <container_id or container_name> <new_image_name> (Create a Docker image from a Docker Container)
+
+docker exec -it f40cc2e51d5b(id) ps -afe. (For example, to get the list of processes running inside the centos image, we can use the below command:)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
