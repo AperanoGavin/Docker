@@ -8,6 +8,7 @@ docker ps -a -q (List the IDs of all the Containers (irrespective of the state) 
 docker run --rm nginx (Delete the container on the exited state)
 docker run -d <image_name> (Run the container in daemon mode)
 docker container run --name nginx-container -d -p 8080:80 nginx
+docker container run --name <container_name? -d -p <host_post>:<container_port> <image_name>
 
  (To expose nginx container (port 80) on port 8080 of the host machine, we can use the below command)
 
@@ -23,6 +24,13 @@ docker rm -f $(docker ps -a -q).  (Delete all the Docker Containers )
 docker container commit <container_id or container_name> <new_image_name> (Create a Docker image from a Docker Container)
 
 docker exec -it f40cc2e51d5b(id) ps -afe. (For example, to get the list of processes running inside the centos image, we can use the below command:)
+
+
+docker push repository_name/imagename:tag (Push a Docker Image to the Docker Registry)
+
+docker pull imagename:tag( Download a Docker Image from the registry)
+
+docker run -it --name <container-name> -v <volume-name>:<path-in-container-where-volume-is-mounted> <image-name> (Mounting Docker Volume using the -v Flag)
 
 
 
